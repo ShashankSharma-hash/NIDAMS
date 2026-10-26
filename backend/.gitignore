@@ -1,0 +1,30 @@
+
+# Python generated files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+.venv/
+venv/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Local database backups
+*.sql
+*.dump
+*.bak
+
+# Editor and operating system files
+.DS_Store
+.vscode/
+
+# Test and temporary files
+.pytest_cache/
+.coverage
+
+# Temporary backend testing data
+sample_alerts.json

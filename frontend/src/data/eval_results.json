@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "note": "Simulated data (localhost victim app + traffic simulator). Per IP-window evaluation on a held-out test set: 61 normal windows + 81 attack windows.",
+  "overall": {
+    "Rules only": {"precision": 1.0, "recall": 0.679, "f1": 0.809, "fpr": 0.0, "tp": 55, "fp": 0, "fn": 26, "tn": 61},
+    "ML only (Isolation Forest)": {"precision": 1.0, "recall": 0.605, "f1": 0.754, "fpr": 0.0, "tp": 49, "fp": 0, "fn": 32, "tn": 61},
+    "Hybrid (rules + ML)": {"precision": 1.0, "recall": 0.914, "f1": 0.955, "fpr": 0.0, "tp": 74, "fp": 0, "fn": 7, "tn": 61}
+  },
+  "recall_per_attack": {
+    "brute_force":      {"rules": 1.0, "ml": 1.0,  "hybrid": 1.0},
+    "brute_force_slow": {"rules": 0.0, "ml": 0.73, "hybrid": 0.73},
+    "flood":            {"rules": 1.0, "ml": 0.0,  "hybrid": 1.0},
+    "injection":        {"rules": 1.0, "ml": 0.0,  "hybrid": 1.0},
+    "scan":             {"rules": 1.0, "ml": 1.0,  "hybrid": 1.0}
+  },
+  "key_finding": "Rules miss low-and-slow brute force (recall 0.0); Isolation Forest catches 73% of it. Hybrid raises overall recall from 0.68 to 0.91 with no false positives on the test set.",
+  "model": {"type": "IsolationForest", "n_estimators": 300, "trained_on": "normal windows only", "ml_threshold": 0.687, "min_requests_for_ml": 3}
+}

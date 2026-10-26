@@ -1,0 +1,31 @@
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.coverage
+
+# Node.js
+node_modules/
+dist/
+dist-ssr/
+
+# Environment files and secrets
+.env
+.env.*
+!.env.example
+
+# Local databases and backups
+*.sql
+*.dump
+*.bak
+
+# Temporary test data
+backend/sample_alerts.json
+
+# OS and editor files
+.DS_Store
+.vscode/
+.idea/
