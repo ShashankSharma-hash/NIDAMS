@@ -1,4 +1,3 @@
-
 # Python
 __pycache__/
 *.py[cod]
@@ -29,3 +28,11 @@ backend/sample_alerts.json
 .DS_Store
 .vscode/
 .idea/
+
+# ML module (Surya)
+*.joblib
+access_log*.jsonl
+alerts.jsonl
+.ipynb_checkpoints/
+.jupyter/
+.Rhistory
